@@ -29,7 +29,7 @@ export default {
   methods: {
     load () {
       axios
-        .get('https://jarbas.serenata.ai/api/chamber_of_deputies/reimbursement/?state=RJ&year=2018')
+        .get('https://jarbas.serenata.ai/api/chamber_of_deputies/reimbursement/?state=RJ')
         .then((resp) => {
           this.dados = resp
         })
