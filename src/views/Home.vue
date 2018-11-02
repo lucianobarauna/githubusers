@@ -1,17 +1,13 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <h1>Respostas da API:</h1>
     <h2>Corruptos</h2>
-    <p>{{dados}}</p>
+    <p>{{getReimbursementList}}</p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import axios from 'axios'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'home',
@@ -21,19 +17,15 @@ export default {
     }
   },
   components: {
-    HelloWorld
   },
   mounted () {
-    this.load()
+    this.fetchReimbursementList()
+  },
+  computed: {
+    ...mapGetters('mapwinners', ['getReimbursementList'])
   },
   methods: {
-    load () {
-      axios
-        .get('https://jarbas.serenata.ai/api/chamber_of_deputies/reimbursement/?state=RJ')
-        .then((resp) => {
-          this.dados = resp
-        })
-    }
+    ...mapActions('mapwinners', ['fetchReimbursementList'])
   }
 }
 </script>
