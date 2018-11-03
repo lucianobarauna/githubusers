@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Respostas da API:</h1>
     <h2>Corruptos</h2>
-    <p>{{getReimbursementList}}</p>
+    <pre>{{getReimbursementList}}</pre>
   </div>
 </template>
 
