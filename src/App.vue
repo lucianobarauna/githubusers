@@ -9,7 +9,6 @@
 </template>
 
 <style lang="sass">
-@import "./assets/sass/libs/leaflet.sass"
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased

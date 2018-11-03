@@ -1,6 +1,4 @@
 import Vue from 'vue'
-import 'leaflet.icon.glyph'
-
 import App from './App.vue'
 import router from './router'
 import store from './store/'

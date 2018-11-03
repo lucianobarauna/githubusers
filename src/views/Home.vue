@@ -18,13 +18,13 @@ export default {
   components: {
   },
   mounted () {
-    this.fetchReimbursementList()
+    this.teste()
   },
   computed: {
     ...mapGetters('mapwinners', ['getReimbursementList'])
   },
   methods: {
-    ...mapActions('mapwinners', ['fetchReimbursementList'])
+    ...mapActions('mapwinners', ['teste'])
   }
 }
 </script>
