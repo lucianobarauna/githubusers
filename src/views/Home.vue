@@ -18,13 +18,13 @@ export default {
   components: {
   },
   mounted () {
-    this.teste()
+    this.teste().then((resp) => console.log(resp))
   },
   computed: {
-    ...mapGetters('mapwinners', ['getReimbursementList'])
+    ...mapGetters('githubusers', ['getReimbursementList'])
   },
   methods: {
-    ...mapActions('mapwinners', ['teste'])
+    ...mapActions('githubusers', ['teste'])
   }
 }
 </script>
