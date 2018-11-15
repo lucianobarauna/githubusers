@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const HTTP = axios.create({
+const http = axios.create({
   baseURL: `https://api.github.com/`
 })
 
-export default HTTP
+export default http

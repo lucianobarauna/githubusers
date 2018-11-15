@@ -1,5 +1,5 @@
-import HTTP from './http'
+import http from './http'
 
 export {
-  HTTP
+  http
 }
