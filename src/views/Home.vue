@@ -1,6 +1,11 @@
 <template>
   <div class="home">
+    <input v-model='gitId' type="text" @keyup.enter="enterApp">
+    <p>ID: {{getIdGithubUser}}</p>
     <h1>Respostas da API:</h1>
+    <pre>
+      {{getGithubData}}
+    </pre>
 
   </div>
 </template>
@@ -12,19 +17,25 @@ export default {
   name: 'home',
   data () {
     return {
-
+      gitId: ''
     }
   },
   components: {
   },
-  mounted () {
-    this.teste().then((resp) => console.log(resp))
-  },
   computed: {
-    ...mapGetters('githubusers', ['getReimbursementList'])
+    ...mapGetters('githubusers', ['getIdGithubUser', 'getGithubData'])
   },
   methods: {
-    ...mapActions('githubusers', ['teste'])
+    ...mapActions('githubusers', ['enterIdGithub', 'fetchGithub']),
+    enterApp () {
+      this.enterIdGithub(this.gitId)
+      this.fetchGithub()
+    }
   }
 }
 </script>
+
+<style lang="sass">
+  .casa
+    background-color:
+</style>

@@ -1,5 +1,6 @@
 const state = {
-  reimbursementList: {}
+  idGithubUser: '',
+  dataGithub: ''
 }
 
 export default state

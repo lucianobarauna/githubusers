@@ -1,6 +1,9 @@
 const mutations = {
-  SET_REIMBURSEMENT_LIST (state, payload) {
-    state.reimbursementList = payload
+  SET_GiTHUB_ID (state, id) {
+    state.idGithubUser = id
+  },
+  SET_GITHUB_DATA (state, data) {
+    state.dataGithub = data
   }
 
 }

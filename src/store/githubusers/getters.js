@@ -1,8 +1,7 @@
 
 const getters = {
-  getReimbursementList (state) {
-    return state.reimbursementList
-  }
+  getIdGithubUser: (state) => state.idGithubUser,
+  getGithubData: (state) => state.dataGithub
 }
 
 export default getters
