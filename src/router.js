@@ -12,6 +12,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: load('pages/GithubUsers')
+    },
+    {
+      path: '/infouser',
+      name: 'infouser',
+      component: load('pages/InfoUsers')
     }
     // {
     //   path: '/about',

@@ -1,5 +1,5 @@
 
-import http from '../../axios'
+import { http } from '../../axios'
 
 const actions = {
   enterIdGithub ({ commit }, id) {
@@ -7,7 +7,10 @@ const actions = {
   },
   fetchGithub ({ commit, state }) {
     return http.get(`users/${state.idGithubUser}`).then((resp) => {
-      if (resp.status === 200) commit('SET_GITHUB_DATA', resp)
+      if (resp.status === 200) {
+        commit('SET_GITHUB_DATA', resp)
+        return resp
+      }
     })
   }
 }
