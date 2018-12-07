@@ -29,9 +29,10 @@ export default {
     ...mapActions('githubusers', ['enterIdGithub', 'fetchGithub']),
     enterApp () {
       this.enterIdGithub(this.gitId)
+      let id = this.gitId
       this.fetchGithub().then((resp) => {
         if (resp.status === 200) {
-          this.$router.push('/infouser')
+          this.$router.push({ name: 'infouser', params: { id } })
         }
       })
     }

@@ -1,20 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '@/store'
 
 const load = component => () => import(`@/components/${component}.vue`)
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
+    {
+      path: '*',
+      name: 404,
+      redirect: '/'
+    },
     {
       path: '/',
       name: 'home',
       component: load('pages/GithubUsers')
     },
     {
-      path: '/infouser',
+      path: '/infouser/:id',
       name: 'infouser',
       component: load('pages/InfoUsers')
     }
@@ -28,3 +34,13 @@ export default new Router({
     // }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.name === 'infouser' && (store.getters['githubusers/getIdGithubUser'] === undefined || store.getters['githubusers/getIdGithubUser'] === '')) {
+    next('/')
+    return
+  }
+  next()
+})
+
+export default router
